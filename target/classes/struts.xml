@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.i18n.reload" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.multipart.maxSize" value="9999999999" />
+	<constant name="struts.custom.i18n.resources" value="global-messages" />
+	<include file="struts-default.xml" />
+	
+	<package name="crud-default" extends="struts-default"
+		namespace="/">
+		
+		<interceptors>
+			<interceptor-stack name="crudStack">
+				<interceptor-ref name="paramsPrepareParamsStack">
+					<param name="exception.logEnabled">true</param>
+					<param name="exception.logLevel">error</param>
+					<param name="fileUpload.maximumSize">5242880</param>
+					<param name="fileUpload.allowedExtensions">jpg,png,gif,bmp,txt,doc,ppt,xls,pdf,ceb,rar,zip,html,xml</param>
+				</interceptor-ref>	
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="crudStack" />
+
+		<action name="EmployeeEdit" class="employeeEditAction" method="execute">
+			<result>/WEB-INF/content/EmployeeEdit.jsp
+			</result>
+			<result name="success">/WEB-INF/content/EmployeeEdit.jsp
+			</result>
+			<result name="input">/WEB-INF/content/EmployeeEdit.jsp
+			</result>
+		</action>
+		<action name="EmployeeUpdate" class="employeeEditAction" method="doUpdate">
+			<result>/WEB-INF/content/EmployeeEdit.jsp
+			</result>
+			<result name="success">/WEB-INF/content/EmployeeEdit.jsp
+			</result>
+			<result name="input">/WEB-INF/content/EmployeeEdit.jsp
+			</result>
+		</action>
+		
+		<action name="EmployeeList" class="employeeListAction" method="execute">
+			<result>/WEB-INF/content/EmployeeList.jsp
+			</result>
+			<result name="success">/WEB-INF/content/EmployeeList.jsp
+			</result>
+			<result name="input">/WEB-INF/content/EmployeeList.jsp
+			</result>
+		</action>
+	</package>
+
+
+</struts>

@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.skyteam.ced.database">
+	<class
+		name="CedBile"
+		table="ced_bile"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid.hex"/>
+		</id>
+
+		<property
+			name="RecordId"
+			column="RECORD_ID"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="Location"
+			column="LOCATION"
+			type="string"
+			not-null="false"
+			length="255"
+		/>
+		<property
+			name="PictureType"
+			column="PICTURE_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.skyteam.ced.database">
+	<class
+		name="CedLog"
+		table="ced_log"
+	>
+		<meta attribute="sync-DAO">false</meta>
+		<id
+			name="Id"
+			type="string"
+			column="ID"
+		>
+			<generator class="uuid.hex"/>
+		</id>
+
+		<property
+			name="BizType"
+			column="BIZ_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="BizId"
+			column="BIZ_ID"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="BizSecondType"
+			column="BIZ_SECOND_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="BizSecondId"
+			column="BIZ_SECOND_ID"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="OpDetail"
+			column="OP_DETAIL"
+			type="string"
+			not-null="false"
+			length="255"
+		/>
+		<property
+			name="OpType"
+			column="OP_TYPE"
+			type="string"
+			not-null="false"
+			length="1"
+		/>
+		<property
+			name="OpId"
+			column="OP_ID"
+			type="string"
+			not-null="false"
+			length="32"
+		/>
+		<property
+			name="OpDate"
+			column="OP_DATE"
+			type="date"
+			not-null="false"
+			length="10"
+		/>
+
+
+	</class>	
+</hibernate-mapping>

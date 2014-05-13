@@ -1,0 +1,52 @@
+/* CSS Document */
+
+html{
+SCROLLBAR-FACE-COLOR: #DEF3FF; 
+SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF;
+SCROLLBAR-SHADOW-COLOR: #FFFFFF;
+SCROLLBAR-3DLIGHT-COLOR: #93B8DB; 
+SCROLLBAR-ARROW-COLOR: #E76152;  
+SCROLLBAR-TRACK-COLOR: #FFFFFF; 
+SCROLLBAR-DARKSHADOW-COLOR: #93B8DB; 
+OVERFLOW-x: hidden;
+OVERFLOW-y: auto;}
+
+body{margin:0px;}
+body,td,div,select,input{font-size:12px; font-family:Geneva, Arial, Helvetica, sans-serif;}
+ul,li,form{padding:0px;margin:0px;list-style-type:none}
+
+A{color:#0099FF;text-decoration:none}
+A:hover{color:#FF6500;text-decoration:underline}
+
+/*font color*/
+.red1{color:#E76152}
+
+/*input*/
+input.txt{border:1px solid #CECFCE;padding:3px 0px 1px 3px;}
+input.txt2{border:1px solid #CECFCE;padding:3px 0px 1px 3px;}
+
+/*index top*/
+.top{clear:both; padding:0px 0px 0px 10px;overflow:hidden;background:url("../images/top_bg.gif") repeat-x;height:80px;}
+.logo{float:left;background:url("../images/logo.gif") 0px 0px no-repeat;width:350px;height:80px;}
+.logo2{float:right;padding:55px 20px 0px 50px;}
+.top2{clear:both; padding:0px 25px 0px 0px;overflow:hidden;background:url("../images/bg3.gif");height:26px;text-align:right;color:#FFFFFF;border-bottom:2px solid #DEDBDE;margin:0px 0px 4px 0px}
+.top2 ul{float:left;padding:0px 0px 0px 10px;}
+.top2 ul li{float:left;text-align:center;background:url("../images/bg31.gif") right top no-repeat;height:26px;padding:0px 20px 0px 20px;line-height:25px;}
+.top2 ul li A{color:#FFFFFF;}
+.top2 dd{float:right;padding:5px 0px 0px 0px;}
+
+/*left menu*/
+.menubg {background:#CEEBFF;height:100%;}
+.menutitle { cursor:pointer; margin: auto auto 5px auto; border:1px solid #84ABD3; background:url("../images/skin.gif") -10px -12px no-repeat; width:100px; height:20px;line-height:20px; padding:2px 0px 0px 25px;}
+.menutitle2 { cursor:pointer; margin: auto auto 5px auto; border:1px solid #84ABD3; background:url("../images/skin.gif") -10px -46px no-repeat; width:100px; height:20px;line-height:20px; padding:2px 0px 0px 25px;color:#FF6500;}
+.submenu {background:#DEF3FF; border:1px solid #fff;width:125px;margin:auto auto 5px auto;padding:1px 0px 1px 0px;}
+.submenu li{background:url("../images/skin.gif") 0px -83px no-repeat;height:17px;padding:3px 0px 0px 30px;}
+.left_menu { width:150px;padding:15px 0px 0px 0px;color:#0065BD;}
+.left_menu A{color:#0065BD;}
+
+/*AD*/
+.ad_tit {margin: auto auto 0px auto; background:url("../images/skin.gif") -11px -113px no-repeat; width:125px; height:20x;line-height:20px; padding:3px 0px 0px 10px;}
+.ad_wod {padding:5px;width:124px;border:1px solid #84ABD3;margin:0 auto;background:#DEF3FF;height:110px;}
+
+
+

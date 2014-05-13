@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://www.getahead.ltd.uk/dwr/dwr20.dtd">
+<dwr>
+	<allow>
+		<!-- create creator="new" javascript="ajaxAction">
+			<param name="class" value="com.skyteam.ced.web.action.AjaxAction" />
+		</create-->
+		<create creator="new" javascript="ajaxWeb">
+			<param name="class" value="com.skyteam.ced.web.AjaxWebBase" />			
+		</create>
+		
+		<convert match="com.skyteam.ced.domain.SaleBookingHistory" converter="bean"></convert>
+		<convert match="com.skyteam.ced.domain.ServiceHistory" converter="bean"></convert>
+		<convert match="com.skyteam.ced.domain.Worksheet" converter="bean">
+			<param name="exclude" value="createOp, latestOp, finishOp, saleLinks, serviceLinks, ctiCalls"></param>
+		</convert>
+	</allow>
+</dwr>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+       default-lazy-init="true">
+
+
+
+	<bean id="baseDao" class="java.lang.Object" abstract="true">
+		<property name="genericDao"><ref bean="genericDao"/></property>
+	</bean>
+	
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+     <property name="dataSource"><ref bean="dataSource" /></property>
+    </bean>
+    
+<bean id="employeeDao" class="com.skyteam.ced.dao.impl.hibernate3.EmployeeDaoImpl" parent="baseDao"></bean>
+<bean id="cedBileDao" class="com.csair.rms.base.dao.impl.hibernate.CedBileDaoImpl" parent="baseDao"></bean>
+<bean id="cedCalculusDao" class="com.csair.rms.base.dao.impl.hibernate.CedCalculusDaoImpl" parent="baseDao"></bean>
+<bean id="cedLogDao" class="com.csair.rms.base.dao.impl.hibernate.CedLogDaoImpl" parent="baseDao"></bean>
+<bean id="cedRecordDao" class="com.csair.rms.base.dao.impl.hibernate.CedRecordDaoImpl" parent="baseDao"></bean>
+<bean id="cedUserDao" class="com.csair.rms.base.dao.impl.hibernate.CedUserDaoImpl" parent="baseDao"></bean>
+
+<bean id="baseQueryDao" class="com.skyteam.ced.dao.query.impl.BaseQueryDao" abstract="true">
+	<property name="genericDao"><ref bean="genericDao"/></property>
+</bean>
+<bean id="employeeQueryDao" parent="baseQueryDao" class="com.skyteam.ced.dao.query.impl.EmployeeQueryDaoImpl"/>
+
+<bean id="queryDaoFactory" class="com.skyteam.ced.dao.query.impl.QueryDaoFactoryImpl">
+		<property name="beans">
+			<bean class="org.apache.commons.collections.map.ListOrderedMap" factory-method="decorate">
+				<constructor-arg index="0">
+					<map>
+					<entry key="employeeQueryDao"><ref bean="employeeQueryDao"/></entry>
+					</map>
+				</constructor-arg>
+			</bean>
+		</property>
+</bean>
+
+</beans>
